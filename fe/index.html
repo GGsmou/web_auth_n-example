@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebAuthN Example</title>
+    <link rel="stylesheet" href="./build/main.css" />
+  </head>
+  <body
+    class="flex flex-col justify-between items-center px-10 py-8 bg-gray-100"
+  >
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-16">
+      WebAuthN Example
+    </h1>
+
+    <main
+      class="flex flex-col justify-center items-center w-96 max-w-md px-4 py-6 bg-white rounded-lg shadow-lg mb-24"
+    >
+      <input
+        type="text"
+        id="user-name"
+        placeholder="user_name"
+        x-model="username"
+        autocomplete="username webauthn"
+        class="w-full min-w-full block p-2 mb-3 border border-gray-300 rounded-md"
+      />
+
+      <div class="flex w-full justify-between">
+        <button
+          class="px-4 text-white bg-blue-500 rounded-md"
+          id="register"
+          onclick="register()"
+        >
+          Register
+        </button>
+        <button
+          class="px-4 py-2 text-white bg-green-500 rounded-md"
+          id="login"
+          onclick="login()"
+        >
+          Login
+        </button>
+      </div>
+    </main>
+
+    <footer
+      class="flex flex-col justify-center items-center w-full max-w-screen-lg px-4 py-6 bg-white rounded-lg shadow-lg gap-4"
+    >
+      <h3 class="text-xl font-bold text-center text-gray-800 italic">
+        Last server response:
+      </h3>
+
+      <pre id="server-response">...</pre>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
